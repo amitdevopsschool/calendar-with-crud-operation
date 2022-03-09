@@ -26,9 +26,12 @@
                   </div>
                                   <div class="panel-body">
                   <h1 style="text-align:center;"> Update Event </h1>
-                  <form method="POST" action="{{ route('editform_update',$events->id) }}"  enctype="multipart/form-data">
+                  <form method="POST" action="{{ route('events.update')}}"  enctype="multipart/form-data">
 
                        {{ csrf_field() }}
+
+                    
+                    <input type="hidden" name="id" value="{{ $events['id']}}">
 
                   <label for=""> Enter Name Of The Event </label>
                   <input class="form-control" type="text" name="title" placeholder="Enter The Name"  value="{{$events->title}}" /><br/><br/>

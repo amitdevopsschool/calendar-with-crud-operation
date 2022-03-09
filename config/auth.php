@@ -40,12 +40,13 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-
+        
         'api' => [
-            'driver' => 'token',
+            'driver' => 'passport',     // we have to replace here
             'provider' => 'users',
             'hash' => false,
         ],
+
     ],
 
     /*

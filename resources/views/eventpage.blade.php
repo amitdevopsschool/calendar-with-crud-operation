@@ -18,8 +18,8 @@
                 </div>
             @endif
           <a href="/addeventurl" class="btn btn-success"> Add Events </a>
-          <a href="/editeventurl" class="btn btn-primary"> Edit Events </a>
-          <a href="/deleteeventurl" class="btn btn-danger"> Delete Events </a>
+          <a href="{{ route('editevent.comingeditpage')}}" class="btn btn-primary"> Edit Events </a>
+          <a href="{{ route('editevent.comingeditpage')}}" class="btn btn-danger"> Delete Events </a>
       </div>
 <br>
 

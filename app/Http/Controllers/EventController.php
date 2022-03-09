@@ -88,11 +88,13 @@ class EventController extends Controller
         return view('editform',compact('events','id'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-          $events = Event::where('id', '=', $id)->first();
-          $events->update($request->all());
-         return redirect('eventpage')->with('success','Event Updates Successfully');
+
+        $events = Event::find($request->id);
+        $events->update($request->all());
+        return redirect('eventpage')->with('success','Event Updates Successfully');
+
     }
 
     /**
@@ -101,11 +103,11 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-
-        $events = Event::find($id);
+        $events = Event::find($request->id);
         $events->delete();
-         return redirect('/editeventurl');
+        return redirect('eventpage')->with('success','Event Deleted Successfully');
+
     }
 }
